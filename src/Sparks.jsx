@@ -16,7 +16,7 @@ export function Sparks({ count, colors, radius = 10 }) {
     const material = useRef();
     useEffect(() => {
       console.log(material.current.uniforms.dashOffset.value)
-      material.current.uniforms.dashOffset.value -= speed * frame;
+      material.current.uniforms.dashOffset.value = -speed * frame;
       advance();
     }, [frame, speed]);
 
